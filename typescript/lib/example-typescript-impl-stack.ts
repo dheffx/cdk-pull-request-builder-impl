@@ -4,6 +4,9 @@ import codecommit = require("@aws-cdk/aws-codecommit");
 import { PullRequestBuilder } from "cdk-pull-request-builder";
 
 export class ExampleTypescriptImplStack extends cdk.Stack {
+    private appRepo: codecommit.Repository;
+    private appTestBuildProject: codebuild.Project;
+    
     constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
