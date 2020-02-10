@@ -1,6 +1,6 @@
 from aws_cdk import (
     aws_codebuild as codebuild,
-    aws_codecommit as codecommit.
+    aws_codecommit as codecommit,
     core
 )
 
@@ -16,7 +16,7 @@ class ExamplePythonImplStack(core.Stack):
         repo = codecommit.Repository(
             self, "Repository",
             description="Example python project",
-            repositoryName=projectName
+            repository_name=projectName
         )
 
         project = codebuild.Project(
@@ -29,11 +29,11 @@ class ExamplePythonImplStack(core.Stack):
 
         prb = cdk_prb.PullRequestBuilder(
             self, "PullRequestBuilder",
-            enforceApproval=True,
+            enforce_approval=True,
             project=project,
             repo=repo,
-            buildFailureEmailSettings={
-                'sourceEmailParam': source_email_param,
-                'notificationEmailParam': notification_email_param
+            build_failure_email_settings={
+                'source_email_param': source_email_param,
+                'notification_email_param': notification_email_param
             }
         )

@@ -1,3 +1,5 @@
 -e .
-# aws-cdk
-# cdk-prb
+aws-cdk.core
+aws-cdk.aws-codebuild
+aws-cdk.aws-codecommit
+cdk-prb
